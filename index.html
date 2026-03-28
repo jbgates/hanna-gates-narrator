@@ -189,13 +189,23 @@
       font-weight: 300;
       line-height: 1.08;
       color: var(--bark);
-      margin-bottom: 28px;
+      margin-bottom: 8px;
       opacity: 0;
       animation: fadeUp 0.9s 0.35s var(--ease-out) forwards;
     }
     .hero-name em {
       font-style: italic;
       color: var(--terracotta);
+    }
+    .hero-subtitle {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3.2vw, 3rem);
+      font-style: italic;
+      color: var(--terracotta);
+      line-height: 1.1;
+      margin-bottom: 28px;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.45s var(--ease-out) forwards;
     }
     .hero-desc {
       font-size: 1.05rem;
@@ -756,7 +766,61 @@
     }
     footer span { color: var(--warm-mid); }
 
-    /* ── ANIMATIONS ─────────────────────────────────────────────── */
+    .studio-section {
+      margin-top: 64px;
+      padding-top: 56px;
+      border-top: 1px solid rgba(201,185,154,0.4);
+      text-align: center;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .studio-heading {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+      font-weight: 300;
+      color: var(--bark);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .studio-heading em {
+      font-style: italic;
+      color: var(--terracotta);
+    }
+    .studio-text {
+      font-size: 0.95rem;
+      color: var(--clay);
+      line-height: 1.85;
+    }
+
+    /* ── SOCIAL LINKS ───────────────────────────────────────────── */
+    .social-links {
+      margin-top: 40px;
+      display: flex;
+      gap: 16px;
+    }
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border: 1.5px solid rgba(122,74,53,0.3);
+      color: var(--clay);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+    }
+    .social-link:hover {
+      border-color: var(--terracotta);
+      color: var(--terracotta);
+    }
+    .social-link svg {
+      width: 15px;
+      height: 15px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(24px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -833,10 +897,10 @@
     <div class="hero-inner">
       <div class="hero-text">
         <div class="hero-eyebrow">Audiobook Narrator</div>
-        <h1 class="hero-name">Hanna Gates<br><em>Narrator.</em></h1>
+        <h1 class="hero-name">Hanna Gates</h1>
+        <div class="hero-subtitle"><em>Narrator, Voice Actor, Storyteller.</em></div>
         <p class="hero-desc">
-          Bringing stories to life through warmth, precision, and an intimate understanding of the written word. Available for audiobook, podcast, and voiceover projects.
-        </p>
+          Bringing auditory life to stories with warmth, precision, and nuance.
         <div class="hero-cta">
           <a href="#audio" class="btn">Hear My Voice</a>
         </div>
@@ -852,7 +916,7 @@
     <div class="inner">
       <div class="showcase-header reveal">
         <div class="section-label">Selected Works</div>
-        <h2 class="showcase-heading">Books I've Brought to <em>Life</em></h2>
+        <h2 class="showcase-heading">Stories I've Told</h2>
         <p class="showcase-sub">Click any title to listen on Audible</p>
       </div>
 
@@ -898,9 +962,12 @@
     <div class="voice-inner">
       <div class="voice-left reveal">
         <div class="section-label">My Craft</div>
-        <h2>What Makes My Narration <em>Distinct</em></h2>
+        <h2>A Commitment to Craft with a Versatile Voice</h2>
         <p>
-          With years of narration experience across romance, literary fiction, and non-fiction, I bring a rare combination of vocal range and emotional intelligence to every project. My work is rooted in careful preparation — a thorough read before a single word is recorded.
+          Working across a broad range of genres in fiction and nonfiction, I give my voice to stories for young adults (YA), middle grade readers, and adults, bringing careful attention and emotional intelligence to each project to nail the beats on each page.
+        </p>
+        <p>
+          I am continually honing my craft as a narrator and as an audio engineer by training with established coaches of the industry. Good communication with my authors, rights holders, and publishers is a cornerstone of my work ethic.
         </p>
       </div>
 
@@ -912,7 +979,7 @@
           </div>
           <div class="quality-text">
             <h4>Warm, Intimate Tone</h4>
-            <p>A naturally warm voice that draws listeners close — conversational without ever losing authority.</p>
+            <p>A naturally warm voice that draws listeners close — conversational without ever losing authority, <strong>with the ability to bring characters of all ages to life</strong>.</p>
           </div>
         </div>
 
@@ -959,39 +1026,51 @@
 
       <div class="track-list" id="trackList">
 
-        <div class="track" data-src="audio/ArtificialSelection_Fantasy_MF_dialogue.mp3" onclick="playTrack(this)">
+        <div class="track" data-src="audio/Sample_RomCom_MF.mp3" onclick="playTrack(this)">
           <div class="track-play-btn">
             <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
           </div>
           <div class="track-info">
-            <div class="track-name">Artificial Selection</div>
-            <div class="track-genre">Fantasy YA with Dialogue #1</div>
+            <div class="track-name">Romance, 1st POV MF Dialogue</div>
+
           </div>
           <div class="track-duration">1:41</div>
           <div class="track-progress-wrap"><div class="track-progress-bar"></div></div>
         </div>
 
-        <div class="track" data-src="audio/Sample_TheParallelProcess.mp3" onclick="playTrack(this)">
+        <div class="track" data-src="audio/Sample_Nonfiction_Historical_Epistolary.mp3" onclick="playTrack(this)">
           <div class="track-play-btn">
             <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
           </div>
           <div class="track-info">
-            <div class="track-name">The Parallel Process</div>
-            <div class="track-genre">Nonfiction</div>
+            <div class="track-name">Nonfiction, Historical Epistolary, Female</div>
+
           </div>
           <div class="track-duration">1:34</div>
           <div class="track-progress-wrap"><div class="track-progress-bar"></div></div>
         </div>
 
-        <div class="track" data-src="audio/TheOtherSideOfDaylight_Ch7_final_sample.mp3" onclick="playTrack(this)">
+        <div class="track" data-src="audio/Sample_YAFantasy_CrisisMoment_MFDialogue.mp3" onclick="playTrack(this)">
           <div class="track-play-btn">
             <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
           </div>
           <div class="track-info">
-            <div class="track-name">The Other Side of Daylight</div>
-            <div class="track-genre">Fantasy YA with Dialogue #2</div>
+            <div class="track-name">Fantasy, YA Late Teens, Crisis MF Dialogue</div>
+
           </div>
           <div class="track-duration">5:01</div>
+          <div class="track-progress-wrap"><div class="track-progress-bar"></div></div>
+        </div>
+
+        <div class="track" data-src="audio/Sample_YAParanormalMystery_MFDialogue.mp3" onclick="playTrack(this)">
+          <div class="track-play-btn">
+            <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </div>
+          <div class="track-info">
+            <div class="track-name">Paranormal Mystery, YA Teens, MF Dialogue</div>
+
+          </div>
+          <div class="track-duration">5:34</div>
           <div class="track-progress-wrap"><div class="track-progress-bar"></div></div>
         </div>
 
@@ -1048,10 +1127,15 @@
         </div>
 
       </div>
-    </div>
-  </section>
 
-  <!-- ── BIO & CONTACT ─────────────────────────────────────────── -->
+      <div class="studio-section reveal">
+        <div class="section-label">The Setup</div>
+        <h3 class="studio-heading">My Cozy Home <em>Studio</em></h3>
+        <p class="studio-text">I record from a quiet, treated basement studio using a Rode NT1 with Focusrite Saffire Pro, and Audacity as my DAW.</p>
+      </div>
+
+    </div>
+  </section> ─────────────────────────────────────────── -->
   <section id="contact">
     <div class="contact-inner">
 
@@ -1065,7 +1149,19 @@
           Hanna was raised in Austin, Texas, a child of hippie entrepreneurs who sold crystals at flea markets - yup, she was raised in a rock shop. She got her Bachelor's in New England and a Master's degree the UK, in politics and climate science. She has lived in the Netherlands, the UK, and in the US West Coast, East Coast, South and now the Midwest. She loves to travel broadly, get into nature, and read (fantasy, mostly). She studied Spanish in college and speaks it slowly but with love (Mexican accent), and while in the Netherlands she learned some very basic Dutch, so she can roll her 'r's and get throaty if a script calls for it.
 Hanna enjoys narrating lively tales of adventure and nonfiction books that contribute to the human pursuit of knowledge, fulfillment, healing and a better world. If she can make people laugh or cry in the process, all the better.
         </p>
-    
+
+        <div class="section-label" style="margin-top:36px;">Find Me Online</div>
+        <div class="social-links">
+          <a class="social-link" href="https://instagram.com/hannagatesnarrates" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            Instagram
+          </a>
+          <a class="social-link" href="https://facebook.com/Hannagatesnarrates" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            Facebook
+          </a>
+        </div>
+
       </div>
 
       <div class="contact-form-wrap reveal" style="transition-delay:0.15s">
@@ -1105,7 +1201,7 @@ Hanna enjoys narrating lively tales of adventure and nonfiction books that contr
 
   <!-- ── FOOTER ────────────────────────────────────────────────── -->
   <footer>
-    <p>© <span id="year"></span> <span>Your Name</span> · Audiobook Narrator · All rights reserved.</p>
+    <p>© <span id="year"></span> <span>Hanna Gates</span> · Audiobook Narrator · All rights reserved.</p>
   </footer>
 
   <!-- ── JAVASCRIPT ─────────────────────────────────────────────── -->
