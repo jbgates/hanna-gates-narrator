@@ -12,13 +12,13 @@
   <style>
     /* ── TOKENS ─────────────────────────────────────────────────── */
     :root {
-      --cream:      #F5F0E8;
-      --parchment:  #EDE5D4;
-      --warm-mid:   #C9B99A;
-      --terracotta: #A0654A;
-      --clay:       #7A4A35;
-      --bark:       #3D2B1F;
-      --ink:        #1E1410;
+      --blush:      #F7EEE8;
+      --rose-mist:  #EDD9D0;
+      --mauve-mid:  #C4A0A8;
+      --mauve:      #9B5B6E;
+      --plum:       #7A3F52;
+      --deep-plum:  #3B2030;
+      --ink:        #2B1A1F;
       --fog:        rgba(61,43,31,0.06);
 
       --font-display: 'Cormorant Garamond', Georgia, serif;
@@ -35,7 +35,7 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
-      background: var(--cream);
+      background: var(--blush);
       color: var(--ink);
       font-family: var(--font-body);
       font-weight: 300;
@@ -66,7 +66,7 @@
       font-size: 1.2rem;
       font-weight: 500;
       letter-spacing: 0.02em;
-      color: var(--bark);
+      color: var(--deep-plum);
     }
     .nav-links {
       display: flex;
@@ -78,7 +78,7 @@
       font-weight: 400;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--bark);
+      color: var(--deep-plum);
       opacity: 0.7;
       transition: opacity 0.2s;
       position: relative;
@@ -88,7 +88,7 @@
       position: absolute;
       bottom: -3px; left: 0; right: 0;
       height: 1px;
-      background: var(--terracotta);
+      background: var(--mauve);
       transform: scaleX(0);
       transform-origin: left;
       transition: transform 0.3s var(--ease-out);
@@ -110,7 +110,7 @@
       display: block;
       width: 24px;
       height: 1.5px;
-      background: var(--bark);
+      background: var(--deep-plum);
       transition: transform 0.3s, opacity 0.3s;
     }
     .nav-toggle.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
@@ -122,9 +122,9 @@
       display: none;
       position: fixed;
       top: var(--nav-h); left: 0; right: 0;
-      background: var(--cream);
+      background: var(--blush);
       padding: 32px 48px;
-      border-bottom: 1px solid var(--parchment);
+      border-bottom: 1px solid var(--rose-mist);
       z-index: 99;
       flex-direction: column;
       gap: 24px;
@@ -134,7 +134,7 @@
       font-size: 0.8rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--bark);
+      color: var(--deep-plum);
     }
 
     /* ── SECTION SHELL ──────────────────────────────────────────── */
@@ -149,7 +149,7 @@
       font-size: 0.68rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--terracotta);
+      color: var(--mauve);
       font-weight: 400;
       margin-bottom: 16px;
     }
@@ -163,7 +163,7 @@
       padding-bottom: 80px;
       background:
         radial-gradient(ellipse 70% 60% at 75% 55%, rgba(160,101,74,0.10) 0%, transparent 70%),
-        var(--cream);
+        var(--blush);
     }
     .hero-inner {
       max-width: var(--max-w);
@@ -178,7 +178,7 @@
       font-size: 0.7rem;
       letter-spacing: 0.25em;
       text-transform: uppercase;
-      color: var(--terracotta);
+      color: var(--mauve);
       margin-bottom: 20px;
       opacity: 0;
       animation: fadeUp 0.9s 0.2s var(--ease-out) forwards;
@@ -188,20 +188,20 @@
       font-size: clamp(3.2rem, 6vw, 5.5rem);
       font-weight: 300;
       line-height: 1.08;
-      color: var(--bark);
+      color: var(--deep-plum);
       margin-bottom: 8px;
       opacity: 0;
       animation: fadeUp 0.9s 0.35s var(--ease-out) forwards;
     }
     .hero-name em {
       font-style: italic;
-      color: var(--terracotta);
+      color: var(--mauve);
     }
     .hero-subtitle {
       font-family: var(--font-display);
       font-size: clamp(1.8rem, 3.2vw, 3rem);
       font-style: italic;
-      color: var(--terracotta);
+      color: var(--mauve);
       line-height: 1.1;
       margin-bottom: 28px;
       opacity: 0;
@@ -209,7 +209,7 @@
     }
     .hero-desc {
       font-size: 1.05rem;
-      color: var(--clay);
+      color: var(--plum);
       max-width: 480px;
       line-height: 1.8;
       opacity: 0;
@@ -223,8 +223,8 @@
     .btn {
       display: inline-block;
       padding: 14px 36px;
-      border: 1.5px solid var(--terracotta);
-      color: var(--terracotta);
+      border: 1.5px solid var(--mauve);
+      color: var(--mauve);
       font-family: var(--font-body);
       font-size: 0.75rem;
       font-weight: 400;
@@ -234,8 +234,8 @@
       cursor: pointer;
     }
     .btn:hover {
-      background: var(--terracotta);
-      color: var(--cream);
+      background: var(--mauve);
+      color: var(--blush);
     }
 
     /* headshot */
@@ -264,13 +264,13 @@
     .hero-photo-placeholder {
       width: 100%;
       aspect-ratio: 3/4;
-      background: var(--parchment);
+      background: var(--rose-mist);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       gap: 12px;
-      color: var(--warm-mid);
+      color: var(--mauve-mid);
       font-size: 0.75rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -283,13 +283,13 @@
     .divider {
       width: 60px;
       height: 1px;
-      background: var(--warm-mid);
+      background: var(--mauve-mid);
       margin: 0 auto 64px;
     }
 
     /* ── SHOWCASE ───────────────────────────────────────────────── */
     #showcase {
-      background: var(--parchment);
+      background: var(--rose-mist);
     }
     .showcase-header {
       text-align: center;
@@ -299,12 +299,12 @@
       font-family: var(--font-display);
       font-size: clamp(2rem, 3.5vw, 3rem);
       font-weight: 300;
-      color: var(--bark);
+      color: var(--deep-plum);
       line-height: 1.2;
     }
     .showcase-sub {
       margin-top: 12px;
-      color: var(--clay);
+      color: var(--plum);
       font-size: 0.9rem;
     }
     .books-grid {
@@ -323,7 +323,7 @@
       position: absolute;
       inset: 0;
       background: rgba(30,20,16,0.72);
-      color: var(--cream);
+      color: var(--blush);
       font-size: 0.7rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -351,13 +351,13 @@
     .book-cover-placeholder {
       width: 100%;
       aspect-ratio: 2/3;
-      background: var(--warm-mid);
+      background: var(--mauve-mid);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      color: var(--cream);
+      color: var(--blush);
       font-size: 0.65rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -370,14 +370,14 @@
     .book-title {
       margin-top: 12px;
       font-size: 0.78rem;
-      color: var(--clay);
+      color: var(--plum);
       line-height: 1.4;
       letter-spacing: 0.02em;
     }
 
     /* ── VOICE DESCRIPTION ──────────────────────────────────────── */
     #voice {
-      background: var(--cream);
+      background: var(--blush);
     }
     .voice-inner {
       max-width: var(--max-w);
@@ -400,16 +400,16 @@
       font-family: var(--font-display);
       font-size: clamp(2rem, 3.5vw, 3rem);
       font-weight: 300;
-      color: var(--bark);
+      color: var(--deep-plum);
       line-height: 1.2;
       margin-bottom: 24px;
     }
     .voice-header h2 em {
       font-style: italic;
-      color: var(--terracotta);
+      color: var(--mauve);
     }
     .voice-left p {
-      color: var(--clay);
+      color: var(--plum);
       font-size: 0.95rem;
       line-height: 1.85;
       margin-bottom: 20px;
@@ -428,7 +428,7 @@
       width: 40px;
       height: 40px;
       flex-shrink: 0;
-      background: var(--parchment);
+      background: var(--rose-mist);
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -438,7 +438,7 @@
     .quality-icon svg {
       width: 18px;
       height: 18px;
-      stroke: var(--terracotta);
+      stroke: var(--mauve);
       fill: none;
       stroke-width: 1.5;
       stroke-linecap: round;
@@ -448,35 +448,35 @@
       font-family: var(--font-display);
       font-size: 1.15rem;
       font-weight: 500;
-      color: var(--bark);
+      color: var(--deep-plum);
       margin-bottom: 6px;
     }
     .quality-text p {
       font-size: 0.88rem;
-      color: var(--clay);
+      color: var(--plum);
       line-height: 1.7;
     }
 
     /* ── AUDIO PLAYER ───────────────────────────────────────────── */
     #audio {
-      background: var(--bark);
-      color: var(--cream);
+      background: var(--deep-plum);
+      color: var(--blush);
     }
     .audio-header {
       text-align: center;
       margin-bottom: 56px;
     }
-    .audio-header .section-label { color: var(--warm-mid); }
+    .audio-header .section-label { color: var(--mauve-mid); }
     .audio-header h2 {
       font-family: var(--font-display);
       font-size: clamp(2rem, 3.5vw, 3rem);
       font-weight: 300;
-      color: var(--cream);
+      color: var(--blush);
       line-height: 1.2;
     }
     .audio-header h2 em {
       font-style: italic;
-      color: var(--warm-mid);
+      color: var(--mauve-mid);
     }
 
     .track-list {
@@ -513,20 +513,20 @@
     }
     .track:hover .track-play-btn,
     .track.playing .track-play-btn {
-      border-color: var(--warm-mid);
+      border-color: var(--mauve-mid);
       background: rgba(160,101,74,0.2);
     }
     .track-play-btn svg {
       width: 14px;
       height: 14px;
-      fill: var(--cream);
+      fill: var(--blush);
       flex-shrink: 0;
     }
 
     .track-info { flex: 1; min-width: 0; }
     .track-name {
       font-size: 0.9rem;
-      color: var(--cream);
+      color: var(--blush);
       font-weight: 400;
       white-space: nowrap;
       overflow: hidden;
@@ -534,7 +534,7 @@
     }
     .track-genre {
       font-size: 0.72rem;
-      color: var(--warm-mid);
+      color: var(--mauve-mid);
       letter-spacing: 0.08em;
       text-transform: uppercase;
       margin-top: 2px;
@@ -556,7 +556,7 @@
     }
     .track-progress-bar {
       height: 100%;
-      background: var(--terracotta);
+      background: var(--mauve);
       width: 0%;
       transition: width 0.5s linear;
     }
@@ -577,14 +577,14 @@
       font-size: 0.68rem;
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: var(--warm-mid);
+      color: var(--mauve-mid);
       flex-shrink: 0;
     }
     .now-playing-name {
       font-family: var(--font-display);
       font-size: 1.1rem;
       font-style: italic;
-      color: var(--cream);
+      color: var(--blush);
       flex: 1;
     }
     .now-playing-controls {
@@ -596,7 +596,7 @@
       background: none;
       border: none;
       cursor: pointer;
-      color: var(--cream);
+      color: var(--blush);
       opacity: 0.6;
       transition: opacity 0.2s;
       display: flex;
@@ -607,7 +607,7 @@
 
     /* ── TESTIMONIALS ───────────────────────────────────────────── */
     #praise {
-      background: var(--parchment);
+      background: var(--rose-mist);
     }
     .praise-header {
       text-align: center;
@@ -617,12 +617,12 @@
       font-family: var(--font-display);
       font-size: clamp(2rem, 3.5vw, 3rem);
       font-weight: 300;
-      color: var(--bark);
+      color: var(--deep-plum);
       line-height: 1.2;
     }
     .praise-header h2 em {
       font-style: italic;
-      color: var(--terracotta);
+      color: var(--mauve);
     }
     .testimonials-grid {
       display: grid;
@@ -630,7 +630,7 @@
       gap: 24px;
     }
     .testimonial {
-      background: var(--cream);
+      background: var(--blush);
       padding: 36px 32px;
       position: relative;
     }
@@ -638,7 +638,7 @@
       content: '\201C';
       font-family: var(--font-display);
       font-size: 5rem;
-      color: var(--warm-mid);
+      color: var(--mauve-mid);
       line-height: 1;
       position: absolute;
       top: 12px;
@@ -649,7 +649,7 @@
       font-family: var(--font-display);
       font-size: 1.05rem;
       font-style: italic;
-      color: var(--bark);
+      color: var(--deep-plum);
       line-height: 1.7;
       margin-bottom: 20px;
       padding-top: 24px;
@@ -658,13 +658,13 @@
       font-size: 0.72rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--terracotta);
+      color: var(--mauve);
       font-weight: 400;
     }
 
     /* ── BIO & CONTACT ──────────────────────────────────────────── */
     #contact {
-      background: var(--cream);
+      background: var(--blush);
     }
     .contact-inner {
       max-width: var(--max-w);
@@ -679,16 +679,16 @@
       font-family: var(--font-display);
       font-size: clamp(2rem, 3vw, 2.8rem);
       font-weight: 300;
-      color: var(--bark);
+      color: var(--deep-plum);
       line-height: 1.2;
       margin-bottom: 24px;
     }
     .bio-section h2 em {
       font-style: italic;
-      color: var(--terracotta);
+      color: var(--mauve);
     }
     .bio-section p {
-      color: var(--clay);
+      color: var(--plum);
       font-size: 0.95rem;
       line-height: 1.85;
       margin-bottom: 16px;
@@ -698,12 +698,12 @@
       font-family: var(--font-display);
       font-size: 1.6rem;
       font-weight: 300;
-      color: var(--bark);
+      color: var(--deep-plum);
       margin-bottom: 8px;
     }
     .contact-form-wrap > p {
       font-size: 0.88rem;
-      color: var(--clay);
+      color: var(--plum);
       margin-bottom: 32px;
     }
 
@@ -715,13 +715,13 @@
       font-size: 0.68rem;
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: var(--clay);
+      color: var(--plum);
       margin-bottom: 8px;
     }
     .form-group input,
     .form-group textarea {
       width: 100%;
-      background: var(--parchment);
+      background: var(--rose-mist);
       border: 1px solid rgba(201,185,154,0.6);
       padding: 14px 18px;
       font-family: var(--font-body);
@@ -735,7 +735,7 @@
     }
     .form-group input:focus,
     .form-group textarea:focus {
-      border-color: var(--terracotta);
+      border-color: var(--mauve);
     }
     .form-group textarea {
       resize: vertical;
@@ -744,8 +744,8 @@
     .form-submit {
       width: 100%;
       padding: 16px;
-      background: var(--terracotta);
-      color: var(--cream);
+      background: var(--mauve);
+      color: var(--blush);
       border: none;
       font-family: var(--font-body);
       font-size: 0.75rem;
@@ -754,14 +754,14 @@
       cursor: pointer;
       transition: background 0.25s;
     }
-    .form-submit:hover { background: var(--clay); }
+    .form-submit:hover { background: var(--plum); }
 
     .form-success {
       display: none;
       text-align: center;
       padding: 32px;
-      background: var(--parchment);
-      color: var(--bark);
+      background: var(--rose-mist);
+      color: var(--deep-plum);
     }
     .form-success.visible { display: block; }
     .form-success p { font-family: var(--font-display); font-size: 1.2rem; font-style: italic; }
@@ -775,7 +775,7 @@
       font-size: 0.75rem;
       letter-spacing: 0.08em;
     }
-    footer span { color: var(--warm-mid); }
+    footer span { color: var(--mauve-mid); }
 
     .studio-section {
       margin-top: 64px;
@@ -790,17 +790,17 @@
       font-family: var(--font-display);
       font-size: clamp(1.6rem, 2.5vw, 2.2rem);
       font-weight: 300;
-      color: var(--bark);
+      color: var(--deep-plum);
       line-height: 1.2;
       margin-bottom: 16px;
     }
     .studio-heading em {
       font-style: italic;
-      color: var(--terracotta);
+      color: var(--mauve);
     }
     .studio-text {
       font-size: 0.95rem;
-      color: var(--clay);
+      color: var(--plum);
       line-height: 1.85;
     }
 
@@ -816,15 +816,15 @@
       gap: 8px;
       padding: 10px 20px;
       border: 1.5px solid rgba(122,74,53,0.3);
-      color: var(--clay);
+      color: var(--plum);
       font-size: 0.72rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       transition: border-color 0.2s, color 0.2s, background 0.2s;
     }
     .social-link:hover {
-      border-color: var(--terracotta);
-      color: var(--terracotta);
+      border-color: var(--mauve);
+      color: var(--mauve);
     }
     .social-link svg {
       width: 15px;
