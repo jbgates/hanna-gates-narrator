@@ -876,6 +876,52 @@
     @media (max-width: 560px) {
       .books-grid { grid-template-columns: repeat(2, 1fr); }
     }
+    .books-carousel {
+  position: relative;
+}
+
+/* fade edges */
+.books-carousel::before,
+.books-carousel::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 16px; /* matches .books-grid bottom padding */
+  width: 60px;
+  z-index: 2;
+  pointer-events: none;
+}
+.books-carousel::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg-color, #fff), transparent);
+}
+.books-carousel::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg-color, #fff), transparent);
+}
+
+.scroll-arrow {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.scroll-arrow-left { left: 4px; }
+.scroll-arrow-right { right: 4px; }
+.scroll-arrow:hover { background: #fff; }
+
   </style>
 </head>
 <body>
@@ -1367,6 +1413,14 @@ Hanna enjoys narrating lively tales of adventure and nonfiction books that contr
       });
     }
   </script>
+<script>
+  document.querySelector('.scroll-arrow-left').addEventListener('click', () => {
+    document.querySelector('.books-grid').scrollBy({ left: -300, behavior: 'smooth' });
+  });
+  document.querySelector('.scroll-arrow-right').addEventListener('click', () => {
+    document.querySelector('.books-grid').scrollBy({ left: 300, behavior: 'smooth' });
+  });
+</script>
 
 </body>
 </html>
