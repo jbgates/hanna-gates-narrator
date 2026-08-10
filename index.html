@@ -308,15 +308,23 @@
       font-size: 0.9rem;
     }
     .books-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 20px;
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      gap:20px;
+      padding: 0 4px 16px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+  
     }
     .book-tile {
       position: relative;
       overflow: hidden;
       cursor: pointer;
       display: block;
+      flex: 0 0 auto;
+      scroll-snap-align: start
     }
     .book-tile::after {
       content: 'Listen on Audible →';
